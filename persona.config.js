@@ -5,9 +5,9 @@ export default {
     },
 
     repository: {
-        url: "https://github.com/Labnann/Persona",
-        branch: "patch-3",
-        rawBase: "https://raw.githubusercontent.com/Labnann/Persona/patch-3",
+        url: "https://github.com/Dr-Emdad/Dr-Emdad.github.io",
+        branch: "pages",
+        rawBase: "https://raw.githubusercontent.com/Dr-Emdad/Dr-Emdad.github.io/pages",
     },
 
     title: "Persona",
