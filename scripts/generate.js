@@ -148,20 +148,22 @@ title: ${title}
             const stem = path.parse(file.name).name;
             const ext = path.extname(file.name).toLowerCase();
 
-            const fileUrl =
-                "/files/" +
-                [...(relative ? relative.split(path.sep) : []), file.name]
-                    .map(encodeURIComponent)
-                    .join("/");
+            const relativeParts = relative ? relative.split(path.sep) : [];
+            const repoRelative = [...relativeParts, file.name]
+                .map(segment => encodeURIComponent(segment))
+                .join("/");
+
+            const fileUrl = `${persona.repository.rawBase}/${repoRelative}`;
 
             let office = "-";
 
             if (OFFICE.has(ext)) {
 
                 const publicUrl =
-                    persona.githubPages.url +
-                    persona.githubPages.baseUrl.replace(/\/$/, "") +
-                    fileUrl;
+                    `${persona.repository.url}/blob/${persona.repository.branch}/` +
+                    [...relativeParts, file.name]
+                        .map(segment => encodeURIComponent(segment))
+                        .join("/");
 
                 office =
                     "https://view.officeapps.live.com/op/view.aspx?src=" +

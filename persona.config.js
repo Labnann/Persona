@@ -4,6 +4,12 @@ export default {
         baseUrl: "/",
     },
 
+    repository: {
+        url: "https://github.com/Labnann/Persona",
+        branch: "patch-3",
+        rawBase: "https://raw.githubusercontent.com/Labnann/Persona/patch-3",
+    },
+
     title: "Persona",
     logo: 
     {
